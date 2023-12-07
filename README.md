@@ -1,22 +1,30 @@
+# React + TypeScript + Vite
 
-![React com Typescript: desenvolvendo uma área administrativa com MUI, Recharts e Styled Components](https://imgur.com/Qgf3van.png)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-# React com Typescript: desenvolvendo uma área administrativa
+Currently, two official plugins are available:
 
-Este projeto faz parte da escola Front-end e tem como objetivo ensinar a construção de uma página de área administrativa utilizando React com Typescript e as bibliotecas Styled-Components, MUI e Recharts.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Funcionalidades do projeto
+## Expanding the ESLint configuration
 
-A página de área administrativa terá as seguintes funcionalidades:
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Dashboard: Página principal com tabela, gráficos e informações.
+- Configure the top-level `parserOptions` property like this:
 
-## Técnicas e tecnologias utilizadas
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-As técnicas e tecnologias que serão utilizadas neste projeto são:
-
-- React: Biblioteca para construção de interfaces de usuário.
-- Typescript: Linguagem de programação que adiciona tipagem estática ao Javascript.
-- Styled-Components: Biblioteca para estilização de componentes React utilizando CSS-in-JS.
-- MUI: Biblioteca de componentes React para criação de interfaces de usuário modernas e responsivas.
-- Recharts: Biblioteca para criação de gráficos utilizando React.
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
