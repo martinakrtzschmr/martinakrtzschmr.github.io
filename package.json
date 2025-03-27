@@ -6,7 +6,7 @@
     "name": "Martin Kretzschmar"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "CHOKIDAR_USEPOLLING=true vite",
     "build": "vite build",
     "serve": "vite preview"
   },
